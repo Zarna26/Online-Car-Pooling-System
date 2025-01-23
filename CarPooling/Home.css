@@ -6,6 +6,8 @@ body {
     min-height: 100vh;
 }
 
+
+
 /* Header Section */
 .header {
     display: flex;
@@ -194,3 +196,109 @@ body {
                 .footer ul li a:hover {
                     text-decoration: underline;
                 }
+
+/* General Popup Styling */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+.popup-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    border: 3px solid #0078d7; /* Attractive border */
+}
+
+.popup-header {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #0078d7; /* Match the button color */
+    margin-bottom: 10px;
+}
+
+.popup-description {
+    font-size: 1rem;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+/* Input Box Styling */
+.popup-input-box {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+    .popup-input-box i {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+        color: #0078d7;
+        font-size: 1.2rem;
+    }
+
+    .popup-input-box input {
+        width: 100%;
+        padding: 10px 12px 10px 36px;
+        font-size: 1rem;
+        border: 2px solid #dddddd;
+        border-radius: 8px;
+        outline: none;
+        transition: border-color 0.3s ease;
+    }
+
+        .popup-input-box input:focus {
+            border-color: #0078d7;
+        }
+
+/* Popup Button */
+.popup-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #0078d7;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .popup-button:hover {
+        background-color: #005bb5;
+    }
+
+/* Close Button */
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #333333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+    .popup-close:hover {
+        color: #ff0000;
+    }
+
+
+
