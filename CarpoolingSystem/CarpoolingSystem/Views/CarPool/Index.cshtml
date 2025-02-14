@@ -1,0 +1,195 @@
+﻿@{
+    ViewData["Title"] = "Carpool";
+}
+
+<style>
+    .container-fluid.bg-success {
+        background-color: #28a745 !important;
+    }
+    #map {
+        height: 400px;
+        width: 100%;
+    }
+</style>
+
+<div class="container-fluid bg-success text-white text-center py-5">
+    <h2>GoMate is Gujarat's largest Carpooling network</h2>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <h4>4 Million+ Users</h4>
+        </div>
+        <div class="col-md-4">
+            <h4>35 Million+ Carpools</h4>
+        </div>
+        <div class="col-md-4">
+            <h4>90,000 Tonnes+ Carbon Prevented</h4>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <!-- Map Section -->
+        <div class="col-md-6">
+            <div id="map"></div>
+        </div>
+
+        <!-- Ride Booking Form -->
+        <div class="col-md-6">
+            <div class="card p-4 shadow">
+                <h4 class="text-center">Find a Ride</h4>
+                
+                <!-- Pickup Location Input -->
+                <div class="mb-3">
+                    <label>Pickup Location:</label>
+                    <input type="text" id="pickupLocation" class="form-control" placeholder="Enter pickup location" readonly>
+                </div>
+
+                <!-- Drop-off Location Input -->
+                <div class="mb-3">
+                    <label>Drop-off Location:</label>
+                    <input type="text" id="dropLocation" class="form-control" placeholder="Enter drop-off location" readonly>
+                </div>
+
+                <button class="btn btn-success w-100">Find Ride</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pickup Location Modal -->
+<div id="pickupModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Choose Pickup Location</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <button class="btn btn-primary w-100 mb-2" id="useCurrentLocation">📍 Use My Current Location</button>
+                <input type="text" id="pickupSearch" class="form-control" placeholder="Search pickup location">
+                <div id="pickupMap" style="height: 400px;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="confirmPickup">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Drop-off Location Modal -->
+<div id="dropModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Choose Drop-off Location</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="dropSearch" class="form-control" placeholder="Search drop-off location">
+                <div id="dropMap" style="height: 400px;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="confirmDrop">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Google Maps API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdColsUduXNvZtEbMMQqSnyIQr5qxY4Qk"></script>
+<script>
+    let map, autocomplete1, autocomplete2, pickupMarker;
+
+    function initMap() {
+        // Coordinates for Ahmedabad and Surat
+        var ahmedabad = { lat: 23.0225, lng: 72.5714 };
+        var surat = { lat: 21.1702, lng: 72.8311 };
+
+        var center = {
+            lat: (ahmedabad.lat + surat.lat) / 2,
+            lng: (ahmedabad.lng + surat.lng) / 2
+        };
+
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: center,
+            zoom: 8
+        });
+
+        // Autocomplete for pickup and drop-off locations
+        autocomplete1 = new google.maps.places.Autocomplete(document.getElementById('pickupLocation'));
+        autocomplete2 = new google.maps.places.Autocomplete(document.getElementById('dropLocation'));
+
+        autocomplete1.bindTo('bounds', map);
+        autocomplete2.bindTo('bounds', map);
+
+        // Fetch current location and set it as the pickup location
+        getCurrentLocation();
+    }
+
+    function getCurrentLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                function (position) {
+                    let lat = position.coords.latitude;
+                    let lng = position.coords.longitude;
+                    let latLng = { lat: lat, lng: lng };
+
+                    let geocoder = new google.maps.Geocoder();
+                    geocoder.geocode({ location: latLng }, function (results, status) {
+                        if (status === "OK" && results[0]) {
+                            document.getElementById('pickupLocation').value = results[0].formatted_address;
+
+                            if (pickupMarker) pickupMarker.setMap(null);
+                            pickupMarker = new google.maps.Marker({
+                                map: map,
+                                position: latLng,
+                                title: "Your Current Location"
+                            });
+
+                            map.setCenter(latLng);
+                            map.setZoom(14);
+                        } else {
+                            alert("Unable to get address. Please try again.");
+                        }
+                    });
+                },
+                function () {
+                    alert("Geolocation failed: Please enable location services.");
+                }
+            );
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
+
+    document.getElementById('pickupLocation').addEventListener('click', function () {
+        var modal = new bootstrap.Modal(document.getElementById('pickupModal'));
+        modal.show();
+    });
+
+    document.getElementById('dropLocation').addEventListener('click', function () {
+        var modal = new bootstrap.Modal(document.getElementById('dropModal'));
+        modal.show();
+    });
+
+    document.getElementById('useCurrentLocation').addEventListener('click', function () {
+        getCurrentLocation();
+        var modal = bootstrap.Modal.getInstance(document.getElementById('pickupModal'));
+        modal.hide();
+    });
+
+    document.getElementById('confirmPickup').addEventListener('click', function () {
+        document.getElementById('pickupLocation').value = document.getElementById('pickupSearch').value;
+        var modal = bootstrap.Modal.getInstance(document.getElementById('pickupModal'));
+        modal.hide();
+    });
+
+    document.getElementById('confirmDrop').addEventListener('click', function () {
+        document.getElementById('dropLocation').value = document.getElementById('dropSearch').value;
+        var modal = bootstrap.Modal.getInstance(document.getElementById('dropModal'));
+        modal.hide();
+    });
+
+    window.onload = initMap;
+</script>

@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<link href="~/css/Site.css" rel="stylesheet" />
+<link href="~/css/Login.css" rel="stylesheet" />
+
+<div class="full-background">
+    <div class="login-container">
+        <!-- Left Section: Login Form -->
+        <div class="left-section">
+            <div class="loginbox">
+                <img src="~/Images/login.png" alt="User Icon" class="user" />
+                <h2>Log in to GoMate</h2>
+                <form method="post">
+                    <label class="lblemail">Email</label>
+                    <input type="email" class="txtemail" name="Email" placeholder="Enter Email" required />
+
+                    <label class="lblpass">Password</label>
+                    <input type="password" class="txtpass" name="Password" placeholder="********" required />
+
+                    <a href="#" class="btnforget">Forgot Password?</a>
+
+                    <br /><br />
+
+                    <button type="submit" class="btnsubmit">Log In</button>
+
+                    <br /><br />
+
+                    Don't have an account?
+                    <a asp-page="/Register" class="btnregister">Click Here to Register</a>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right Section: Promotional Text -->
+        <div class="right-section">
+            <h1>Find Your Ride, Share Your Journey</h1>
+            <p>Connect with drivers and riders to share travel costs and reduce your carbon footprint.</p>
+        </div>
+    </div>
+</div>

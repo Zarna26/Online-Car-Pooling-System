@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Find a Ride";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places"></script>
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 12.9716, lng: 77.5946 }, // Default to Bangalore
+                zoom: 12
+            });
+
+            var input1 = document.getElementById('pickupLocation');
+            var input2 = document.getElementById('dropLocation');
+
+            var autocomplete1 = new google.maps.places.Autocomplete(input1);
+            var autocomplete2 = new google.maps.places.Autocomplete(input2);
+
+            autocomplete1.bindTo('bounds', map);
+            autocomplete2.bindTo('bounds', map);
+        }
+    </script>
+</head>
+<body onload="initMap();">
+
+    <div class="container mt-4">
+        <h2 class="text-center">Find a Ride</h2>
+
+        <form method="post" asp-action="FindRide">
+            <div class="mb-3">
+                <label for="pickupLocation">Pickup Location:</label>
+                <input type="text" id="pickupLocation" name="PickupLocation" class="form-control" placeholder="Enter pickup location" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="dropLocation">Drop-off Location:</label>
+                <input type="text" id="dropLocation" name="DropLocation" class="form-control" placeholder="Enter drop-off location" required>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100">Find Ride</button>
+        </form>
+
+        <div id="map" style="height: 400px; margin-top: 20px;"></div>
+    </div>
+
+</body>
+</html>

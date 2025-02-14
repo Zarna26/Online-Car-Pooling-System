@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="hero-section">
+    <div class="container text-center">
+        <h1 class="display-4">Find Your Ride, Share Your Journey</h1>
+        <p>Save money, reduce your carbon footprint, and connect with others on the go.</p>
+        <div class="btn-group">
+            <a asp-controller="CarPool" asp-action="Index" class="btn btn-light btn-lg">Book Your Ride</a>
+
+        </div>
+    </div>
+</div>
+
+<div class="features-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <img src="~/Images/login.png" alt="Eco-Friendly" class="feature-icon">
+                    <h3 class="feature-title">Eco-Friendly</h3>
+                    <p>Reduce your carbon footprint by sharing rides.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <img src="~/Images/login.png" alt="Cost Saving" class="feature-icon">
+                    <h3 class="feature-title">Cost Saving</h3>
+                    <p>Save money by sharing travel expenses.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+            <div class="feature-box">
+                <img src="~/Images/login.png" alt="Real-Time Tracking" class="feature-icon">
+                <h3 class="feature-title">Real-Time Tracking</h3>
+                <p>Track your ride in real-time for added safety.</p>
+            </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

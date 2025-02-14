@@ -1,0 +1,145 @@
+﻿/* Full background with a fixed green top and white bottom */
+.full-background {
+    min-height: 100vh; /* Allows the container to grow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    position: relative;
+}
+
+    /* Green top section (fixed height) */
+    .full-background::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60vh; /* 40% of viewport height */
+        background-color: #28a745; /* Dark Green */
+    }
+
+/* Main registration container */
+.register-container {
+    display: flex;
+    width: 70%;
+    max-width: 1200px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+/* Left Section: Registration Box */
+.left-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 40px;
+}
+
+.registerbox {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+    /* User Icon */
+    .registerbox img.user {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    margin-top: 20px; /* Add space at the top */
+}
+
+
+/* Heading */
+h2 {
+    color: #28a745;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Labels */
+.lblfname, .lbllname, .lblemail, .lblpass, .lblmonumber, .lblgender {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 2px;
+    color: #333;
+}
+
+/* Input Fields */
+.txtfield {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 46px;
+}
+
+/* Submit Button */
+.btnsubmit {
+    background-color: #ffc107;
+    color: black;
+    border: none;
+    padding: 12px 15px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+    .btnsubmit:hover {
+        background-color: #e0a800;
+    }
+
+/* Login Link */
+.btnlogin {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+    .btnlogin:hover {
+        text-decoration: underline;
+    }
+
+/* Radio Buttons */
+.radio-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+    .radio-group input[type="radio"] {
+        margin-right: 5px;
+    }
+
+/* Right Section: Promotional Text */
+.right-section {
+    flex: 1;
+    text-align: left;
+    padding: 40px;
+    background-color: white;
+}
+
+    .right-section h1 {
+        padding-top: 140px;
+        color: #28a745;
+        font-weight: bold;
+        font-size: 28px;
+    }
+
+    .right-section p {
+        font-size: 16px;
+        color: #555;
+    }
