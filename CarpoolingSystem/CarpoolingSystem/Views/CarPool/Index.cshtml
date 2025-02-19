@@ -6,24 +6,39 @@
     .container-fluid.bg-success {
         background-color: #28a745 !important;
     }
+
     #map {
         height: 400px;
         width: 100%;
     }
+
+    .suggestions {
+        position: absolute;
+        background: white;
+        border: 1px solid #ccc;
+        width: 100%;
+        max-height: 200px;
+        overflow-y: auto;
+        z-index: 1000;
+    }
+
+    .suggestion-item {
+        padding: 10px;
+        cursor: pointer;
+        border-bottom: 1px solid #ddd;
+    }
+
+        .suggestion-item:hover {
+            background: #f0f0f0;
+        }
 </style>
 
 <div class="container-fluid bg-success text-white text-center py-5">
     <h2>GoMate is Gujarat's largest Carpooling network</h2>
     <div class="row mt-4">
-        <div class="col-md-4">
-            <h4>4 Million+ Users</h4>
-        </div>
-        <div class="col-md-4">
-            <h4>35 Million+ Carpools</h4>
-        </div>
-        <div class="col-md-4">
-            <h4>90,000 Tonnes+ Carbon Prevented</h4>
-        </div>
+        <div class="col-md-4"><h4>4 Million+ Users</h4></div>
+        <div class="col-md-4"><h4>35 Million+ Carpools</h4></div>
+        <div class="col-md-4"><h4>90,000 Tonnes+ Carbon Prevented</h4></div>
     </div>
 </div>
 
@@ -38,7 +53,7 @@
         <div class="col-md-6">
             <div class="card p-4 shadow">
                 <h4 class="text-center">Find a Ride</h4>
-                
+
                 <!-- Pickup Location Input -->
                 <div class="mb-3">
                     <label>Pickup Location:</label>
@@ -49,6 +64,34 @@
                 <div class="mb-3">
                     <label>Drop-off Location:</label>
                     <input type="text" id="dropLocation" class="form-control" placeholder="Enter drop-off location" readonly>
+                </div>
+                <div class="row mt-4">
+
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="rideDate">Date:</label>
+                            <input type="date" id="rideDate" class="form-control">
+                        </div>
+                    </div>
+
+                    <!-- Time Input -->
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="rideTime">Time:</label>
+                            <input type="time" id="rideTime" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+
+                    <div class="mb-3">
+                        <label for="numPassengers">Passengers:</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-users"></i></span> <!-- Passenger icon -->
+                            <input type="number" id="numPassengers" class="form-control" placeholder="Enter number of passengers" min="1" value="1">
+                        </div>
+                    
+                   
                 </div>
 
                 <button class="btn btn-success w-100">Find Ride</button>
@@ -68,6 +111,8 @@
             <div class="modal-body">
                 <button class="btn btn-primary w-100 mb-2" id="useCurrentLocation">📍 Use My Current Location</button>
                 <input type="text" id="pickupSearch" class="form-control" placeholder="Search pickup location">
+                <div id="pickupSuggestions" class="suggestions-list"></div>
+
                 <div id="pickupMap" style="height: 400px;"></div>
             </div>
             <div class="modal-footer">
@@ -87,6 +132,7 @@
             </div>
             <div class="modal-body">
                 <input type="text" id="dropSearch" class="form-control" placeholder="Search drop-off location">
+                <div id="dropSuggestions" class="suggestions-list"></div> <!-- Location Suggestions Appear Here -->
                 <div id="dropMap" style="height: 400px;"></div>
             </div>
             <div class="modal-footer">
@@ -97,99 +143,205 @@
 </div>
 
 <!-- Google Maps API -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdColsUduXNvZtEbMMQqSnyIQr5qxY4Qk"></script>
 <script>
-    let map, autocomplete1, autocomplete2, pickupMarker;
+    var map, pickupMarker, dropMarker;
+    const opencageApiKey = "ef5f3c3bad1b472f8ebce3ac7f6cb22f"; // Replace with your OpenCage API key
 
     function initMap() {
-        // Coordinates for Ahmedabad and Surat
-        var ahmedabad = { lat: 23.0225, lng: 72.5714 };
-        var surat = { lat: 21.1702, lng: 72.8311 };
-
-        var center = {
-            lat: (ahmedabad.lat + surat.lat) / 2,
-            lng: (ahmedabad.lng + surat.lng) / 2
-        };
-
         map = new google.maps.Map(document.getElementById('map'), {
-            center: center,
+            center: { lat: 23.0225, lng: 72.5714 }, // Default: Ahmedabad
             zoom: 8
         });
 
-        // Autocomplete for pickup and drop-off locations
-        autocomplete1 = new google.maps.places.Autocomplete(document.getElementById('pickupLocation'));
-        autocomplete2 = new google.maps.places.Autocomplete(document.getElementById('dropLocation'));
+        document.getElementById('useCurrentLocation').addEventListener('click', getCurrentLocation);
+        document.getElementById('dropSearch').addEventListener('input', searchDropOffLocation);
 
-        autocomplete1.bindTo('bounds', map);
-        autocomplete2.bindTo('bounds', map);
+        // Event listener to call searchPickupLocation when user types in the pickup input box
+        document.getElementById('pickupSearch').addEventListener('input', searchPickupLocation);
 
-        // Fetch current location and set it as the pickup location
-        getCurrentLocation();
     }
 
-    function getCurrentLocation() {
+    // 📍 Fetch Current Location for Pickup
+    async function getCurrentLocation() {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-                function (position) {
-                    let lat = position.coords.latitude;
-                    let lng = position.coords.longitude;
-                    let latLng = { lat: lat, lng: lng };
+            navigator.geolocation.getCurrentPosition(async function (position) {
+                let lat = position.coords.latitude;
+                let lng = position.coords.longitude;
 
-                    let geocoder = new google.maps.Geocoder();
-                    geocoder.geocode({ location: latLng }, function (results, status) {
-                        if (status === "OK" && results[0]) {
-                            document.getElementById('pickupLocation').value = results[0].formatted_address;
+                try {
+                    let address = await reverseGeocode(lat, lng);
 
-                            if (pickupMarker) pickupMarker.setMap(null);
-                            pickupMarker = new google.maps.Marker({
-                                map: map,
-                                position: latLng,
-                                title: "Your Current Location"
-                            });
+                    document.getElementById('pickupSearch').value = address;
+                    document.getElementById('pickupSearch').dataset.lat = lat;
+                    document.getElementById('pickupSearch').dataset.lng = lng;
 
-                            map.setCenter(latLng);
-                            map.setZoom(14);
-                        } else {
-                            alert("Unable to get address. Please try again.");
-                        }
-                    });
-                },
-                function () {
-                    alert("Geolocation failed: Please enable location services.");
+                    updatePickupMap(lat, lng);
+                } catch (error) {
+                    alert("Unable to fetch address. Please try again.");
                 }
-            );
+            }, function () {
+                alert("Geolocation failed: Please enable location services.");
+            });
         } else {
             alert("Geolocation is not supported by this browser.");
         }
     }
 
+    // 🌍 Reverse Geocode (Lat, Lng → Address)
+    async function reverseGeocode(lat, lng) {
+        let url = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=${opencageApiKey}`;
+        let response = await fetch(url);
+        let data = await response.json();
+
+        if (data.results && data.results.length > 0) {
+            return data.results[0].formatted;
+        } else {
+            throw new Error("No results found.");
+        }
+    }
+
+    // 📌 Update Pickup Location Map
+    function updatePickupMap(lat, lng) {
+        let location = { lat: lat, lng: lng };
+
+        if (pickupMarker) pickupMarker.setMap(null);
+
+        pickupMarker = new google.maps.Marker({
+            position: location,
+            map: map,
+            title: "Your Pickup Location"
+        });
+
+        map.setCenter(location);
+        map.setZoom(14);
+    }
+
+    async function searchPickupLocation() {
+        let query = document.getElementById('pickupSearch').value.trim();
+        let suggestionsContainer = document.getElementById('pickupSuggestions');
+
+        if (query.length < 1) {
+            suggestionsContainer.innerHTML = ""; // Hide suggestions if less than 3 characters
+            return;
+        }
+
+        let url = `https://api.opencagedata.com/geocode/v1/json?q=${query}&key=${opencageApiKey}&countrycode=in&bounds=20.1406,68.0322|24.7136,74.4072`;
+        let response = await fetch(url);
+        let data = await response.json();
+
+        suggestionsContainer.innerHTML = ""; // Clear previous suggestions
+
+        if (data.results.length > 0) {
+            data.results.forEach(result => {
+                let item = document.createElement('div');
+                item.classList.add('suggestion-item');
+                item.textContent = result.formatted;
+
+                item.onclick = function () {
+                    document.getElementById('pickupSearch').value = result.formatted;
+                    document.getElementById('pickupSearch').dataset.lat = result.geometry.lat;
+                    document.getElementById('pickupSearch').dataset.lng = result.geometry.lng;
+
+                    updatePickupMap(result.geometry.lat, result.geometry.lng);
+                    suggestionsContainer.innerHTML = ""; // Hide suggestions after selection
+                };
+
+                suggestionsContainer.appendChild(item);
+            });
+        }
+    }
+
+
+
+    // 🗺️ Search Drop-off Location (Show Suggestions Below Textbox)
+    async function searchDropOffLocation() {
+        let query = document.getElementById('dropSearch').value.trim();
+        let suggestionsContainer = document.getElementById('dropSuggestions');
+
+        if (query.length < 1) {
+            suggestionsContainer.innerHTML = ""; // Hide suggestions if less than 3 characters
+            return;
+        }
+
+        let url = `https://api.opencagedata.com/geocode/v1/json?q=${query}&key=${opencageApiKey}&countrycode=in&bounds=20.1406,68.0322|24.7136,74.4072`;
+        let response = await fetch(url);
+        let data = await response.json();
+
+        suggestionsContainer.innerHTML = ""; // Clear previous suggestions
+
+        if (data.results.length > 0) {
+            data.results.forEach(result => {
+                let item = document.createElement('div');
+                item.classList.add('suggestion-item');
+                item.textContent = result.formatted;
+
+                item.onclick = function () {
+                    document.getElementById('dropSearch').value = result.formatted;
+                    document.getElementById('dropSearch').dataset.lat = result.geometry.lat;
+                    document.getElementById('dropSearch').dataset.lng = result.geometry.lng;
+
+                    updateDropMap(result.geometry.lat, result.geometry.lng);
+                    suggestionsContainer.innerHTML = ""; // Hide suggestions after selection
+                };
+
+                suggestionsContainer.appendChild(item);
+            });
+        }
+    }
+
+    // 📌 Update Drop-off Location Map
+    function updateDropMap(lat, lng) {
+        let location = { lat: lat, lng: lng };
+
+        if (dropMarker) dropMarker.setMap(null);
+
+        dropMarker = new google.maps.Marker({
+            position: location,
+            map: map,
+            title: "Your Drop-off Location"
+        });
+
+        map.setCenter(location);
+        map.setZoom(14);
+    }
+
+    // 📍 Show Pickup Modal
     document.getElementById('pickupLocation').addEventListener('click', function () {
         var modal = new bootstrap.Modal(document.getElementById('pickupModal'));
         modal.show();
     });
 
+    // ✅ Confirm Pickup Location
+    document.getElementById('confirmPickup').addEventListener('click', function () {
+        let selectedLocation = document.getElementById('pickupSearch').value;
+
+        if (selectedLocation.trim() !== "") {
+            document.getElementById('pickupLocation').value = selectedLocation;
+        }
+
+        var modal = bootstrap.Modal.getInstance(document.getElementById('pickupModal'));
+        modal.hide();
+    });
+
+    // 🚗 Show Drop-off Modal
     document.getElementById('dropLocation').addEventListener('click', function () {
         var modal = new bootstrap.Modal(document.getElementById('dropModal'));
         modal.show();
     });
 
-    document.getElementById('useCurrentLocation').addEventListener('click', function () {
-        getCurrentLocation();
-        var modal = bootstrap.Modal.getInstance(document.getElementById('pickupModal'));
-        modal.hide();
-    });
-
-    document.getElementById('confirmPickup').addEventListener('click', function () {
-        document.getElementById('pickupLocation').value = document.getElementById('pickupSearch').value;
-        var modal = bootstrap.Modal.getInstance(document.getElementById('pickupModal'));
-        modal.hide();
-    });
-
+    // ✅ Confirm Drop-off Location
     document.getElementById('confirmDrop').addEventListener('click', function () {
-        document.getElementById('dropLocation').value = document.getElementById('dropSearch').value;
+        let selectedLocation = document.getElementById('dropSearch').value;
+
+        if (selectedLocation.trim() !== "") {
+            document.getElementById('dropLocation').value = selectedLocation;
+        }
+
         var modal = bootstrap.Modal.getInstance(document.getElementById('dropModal'));
         modal.hide();
     });
 
     window.onload = initMap;
 </script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdColsUduXNvZtEbMMQqSnyIQr5qxY4Qk&callback=initMap" async defer></script>

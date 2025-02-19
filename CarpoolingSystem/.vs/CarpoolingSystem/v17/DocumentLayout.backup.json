@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\SEM_5_project\\CarpoolingSystem\\",
+  "WorkspaceRootPath": "D:\\CarPooling\\CarpoolingSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|d:\\sem_5_project\\carpoolingsystem\\carpoolingsystem\\views\\carpool\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|d:\\carpooling\\carpoolingsystem\\carpoolingsystem\\views\\carpool\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|solutionrelative:carpoolingsystem\\views\\carpool\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|d:\\sem_5_project\\carpoolingsystem\\carpoolingsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|d:\\carpooling\\carpoolingsystem\\carpoolingsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|solutionrelative:carpoolingsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|d:\\carpooling\\carpoolingsystem\\carpoolingsystem\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|solutionrelative:carpoolingsystem\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 17,
           "Children": [
             {
               "$type": "Bookmark",
@@ -86,13 +90,26 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\CarPooling\\CarpoolingSystem\\CarpoolingSystem\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "CarpoolingSystem\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\CarPooling\\CarpoolingSystem\\CarpoolingSystem\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "CarpoolingSystem\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAEwAAACA+f////8pwFcAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-02-15T14:46:40.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\SEM_5_project\\CarpoolingSystem\\CarpoolingSystem\\Views\\CarPool\\Index.cshtml",
+              "DocumentMoniker": "D:\\CarPooling\\CarpoolingSystem\\CarpoolingSystem\\Views\\CarPool\\Index.cshtml",
               "RelativeDocumentMoniker": "CarpoolingSystem\\Views\\CarPool\\Index.cshtml",
-              "ToolTip": "D:\\SEM_5_project\\CarpoolingSystem\\CarpoolingSystem\\Views\\CarPool\\Index.cshtml",
+              "ToolTip": "D:\\CarPooling\\CarpoolingSystem\\CarpoolingSystem\\Views\\CarPool\\Index.cshtml",
               "RelativeToolTip": "CarpoolingSystem\\Views\\CarPool\\Index.cshtml",
-              "ViewState": "AgIAAFgAAAAAoJmZmZnZv2MAAABgAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAMGRmZmb+v00AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-14T09:12:20.907Z",
               "EditorCaption": ""
@@ -101,11 +118,11 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\SEM_5_project\\CarpoolingSystem\\CarpoolingSystem\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "D:\\CarPooling\\CarpoolingSystem\\CarpoolingSystem\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "CarpoolingSystem\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\SEM_5_project\\CarpoolingSystem\\CarpoolingSystem\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\CarPooling\\CarpoolingSystem\\CarpoolingSystem\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "CarpoolingSystem\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAADoAAACgy8zMzMwswEQAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-14T03:57:35.705Z",
               "EditorCaption": ""
