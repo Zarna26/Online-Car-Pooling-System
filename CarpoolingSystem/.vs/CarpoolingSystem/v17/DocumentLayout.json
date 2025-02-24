@@ -1,18 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\CarPooling\\CarpoolingSystem\\",
+  "WorkspaceRootPath": "C:\\carPooling_new\\Online-Car-Pooling-System\\CarpoolingSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|d:\\carpooling\\carpoolingsystem\\carpoolingsystem\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|solutionrelative:carpoolingsystem\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|c:\\carpooling_new\\online-car-pooling-system\\carpoolingsystem\\carpoolingsystem\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|solutionrelative:carpoolingsystem\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|d:\\carpooling\\carpoolingsystem\\carpoolingsystem\\views\\carpool\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|solutionrelative:carpoolingsystem\\views\\carpool\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|d:\\carpooling\\carpoolingsystem\\carpoolingsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|c:\\carpooling_new\\online-car-pooling-system\\carpoolingsystem\\carpoolingsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|solutionrelative:carpoolingsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|c:\\carpooling_new\\online-car-pooling-system\\carpoolingsystem\\carpoolingsystem\\views\\home\\findride.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|solutionrelative:carpoolingsystem\\views\\home\\findride.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|c:\\carpooling_new\\online-car-pooling-system\\carpoolingsystem\\carpoolingsystem\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|solutionrelative:carpoolingsystem\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|c:\\carpooling_new\\online-car-pooling-system\\carpoolingsystem\\carpoolingsystem\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|solutionrelative:carpoolingsystem\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|c:\\carpooling_new\\online-car-pooling-system\\carpoolingsystem\\carpoolingsystem\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|solutionrelative:carpoolingsystem\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,109 +34,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{a34b1c5d-6d37-4a0c-a8b0-99f8e8158b48}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1890248698:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1204970601:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1627928588:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:2:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1646721036:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:3:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "site.css",
-              "DocumentMoniker": "D:\\CarPooling\\CarpoolingSystem\\CarpoolingSystem\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "CarpoolingSystem\\wwwroot\\css\\site.css",
-              "ToolTip": "D:\\CarPooling\\CarpoolingSystem\\CarpoolingSystem\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "CarpoolingSystem\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAIAAAAAAjZmZmVkqwFcAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-15T14:46:40.797Z",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\carPooling_new\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "CarpoolingSystem\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\carPooling_new\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "CarpoolingSystem\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-23T15:23:13.743Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\CarPooling\\CarpoolingSystem\\CarpoolingSystem\\Views\\CarPool\\Index.cshtml",
-              "RelativeDocumentMoniker": "CarpoolingSystem\\Views\\CarPool\\Index.cshtml",
-              "ToolTip": "D:\\CarPooling\\CarpoolingSystem\\CarpoolingSystem\\Views\\CarPool\\Index.cshtml",
-              "RelativeToolTip": "CarpoolingSystem\\Views\\CarPool\\Index.cshtml",
-              "ViewState": "AgIAAD0AAAAAMGRmZmb+v00AAAAgAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "About.cshtml",
+              "DocumentMoniker": "C:\\carPooling_new\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Views\\Home\\About.cshtml",
+              "RelativeDocumentMoniker": "CarpoolingSystem\\Views\\Home\\About.cshtml",
+              "ToolTip": "C:\\carPooling_new\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Views\\Home\\About.cshtml",
+              "RelativeToolTip": "CarpoolingSystem\\Views\\Home\\About.cshtml",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAAAGoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-14T09:12:20.907Z",
+              "WhenOpened": "2025-02-23T15:21:03.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Contact.cshtml",
+              "DocumentMoniker": "C:\\carPooling_new\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Views\\Home\\Contact.cshtml",
+              "RelativeDocumentMoniker": "CarpoolingSystem\\Views\\Home\\Contact.cshtml",
+              "ToolTip": "C:\\carPooling_new\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Views\\Home\\Contact.cshtml",
+              "RelativeToolTip": "CarpoolingSystem\\Views\\Home\\Contact.cshtml",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAAFgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-23T15:20:38.969Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\CarPooling\\CarpoolingSystem\\CarpoolingSystem\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "CarpoolingSystem\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\CarPooling\\CarpoolingSystem\\CarpoolingSystem\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "CarpoolingSystem\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Title": "FindRide.cshtml",
+              "DocumentMoniker": "C:\\carPooling_new\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Views\\Home\\FindRide.cshtml",
+              "RelativeDocumentMoniker": "CarpoolingSystem\\Views\\Home\\FindRide.cshtml",
+              "ToolTip": "C:\\carPooling_new\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Views\\Home\\FindRide.cshtml",
+              "RelativeToolTip": "CarpoolingSystem\\Views\\Home\\FindRide.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-14T03:57:35.705Z",
+              "WhenOpened": "2025-02-23T14:33:11.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\carPooling_new\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "CarpoolingSystem\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\carPooling_new\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "CarpoolingSystem\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAM0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-19T18:23:36.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\carPooling_new\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "CarpoolingSystem\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\carPooling_new\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "CarpoolingSystem\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAJcCAAAAAAAAAAAqwKcCAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-02-15T14:46:40.797Z",
               "EditorCaption": ""
             }
           ]

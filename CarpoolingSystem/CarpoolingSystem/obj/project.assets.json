@@ -2884,23 +2884,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\zarna\\.nuget\\packages\\": {},
+    "C:\\Users\\FORAM\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CarPooling\\CarpoolingSystem\\CarpoolingSystem\\CarpoolingSystem.csproj",
+      "projectUniqueName": "C:\\carPooling_new\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\CarpoolingSystem.csproj",
       "projectName": "CarpoolingSystem",
-      "projectPath": "D:\\CarPooling\\CarpoolingSystem\\CarpoolingSystem\\CarpoolingSystem.csproj",
-      "packagesPath": "C:\\Users\\zarna\\.nuget\\packages\\",
-      "outputPath": "D:\\CarPooling\\CarpoolingSystem\\CarpoolingSystem\\obj\\",
+      "projectPath": "C:\\carPooling_new\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\CarpoolingSystem.csproj",
+      "packagesPath": "C:\\Users\\FORAM\\.nuget\\packages\\",
+      "outputPath": "C:\\carPooling_new\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\zarna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\FORAM\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2927,7 +2927,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -2963,7 +2964,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

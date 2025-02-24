@@ -1,0 +1,91 @@
+﻿@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<div class="container mt-5">
+    <h1 class="text-success fw-bold">Get in touch with us</h1>
+
+    <div class="row mt-4">
+        <!-- Left side: Contact Information -->
+        <div class="col-md-5">
+            <h4 class="fw-bold">Head Office – City Name</h4>
+            <p>GoMate HQ Pvt Ltd</p>
+            <p>123, Carpool Avenue, 2nd Floor,<br> City Center Road, Downtown,<br> Metropolis, Country 123456</p>
+
+            <h5 class="fw-bold mt-3">Call us at</h5>
+            <p><a href="tel:+1234567890" class="text-primary text-decoration-none fw-bold">+1 234 567 890</a></p>
+
+            <h5 class="fw-bold mt-3">Mail us at</h5>
+            <p><a href="mailto:support@gomate.com" class="text-primary text-decoration-none fw-bold">support@gomate.com</a></p>
+        </div>
+
+        <!-- Right side: Contact Form -->
+        <div class="col-md-6">
+            <h4 class="fw-bold">Leave us a message</h4>
+            <div class="card p-4 shadow-sm">
+                <form>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="tel" class="form-control" placeholder="Phone" required>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="4" placeholder="Write your message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100 fw-bold">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <!-- Logo & Description -->
+            <div class="col-md-4">
+                <img src="~/Images/logo.webp" alt="Go Mate Logo" class="footer-logo">
+                <p>India's Best Carpooling Network for Your Daily Commuting.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Links Section -->
+            <div class="col-md-4">
+                <h5>Company</h5>
+                <ul>
+                    <li><a asp-controller="Home" asp-action="About">About us</a></li>
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Privacy</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-4">
+                <h5>Support</h5>
+                <ul>
+                    <li><a asp-controller="Home" asp-action="Contact">Contact us</a></li>
+                    <li><a asp-controller="Home" asp-action="Sitemap">Sitemap</a></li>
+                    <li><a asp-controller="Home" asp-action="Terms">Terms</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="copyright">
+            <p>© 2025 Go Mate. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+

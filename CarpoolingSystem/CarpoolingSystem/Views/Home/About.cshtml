@@ -1,0 +1,110 @@
+﻿@{
+    ViewData["Title"] = "About Us";
+}
+
+<div class="about-container">
+    <!-- Header Section -->
+    <section class="about-header">
+        <h1>About CarpoolingSystem</h1>
+        <p>Connecting people for a smarter and greener way to travel.</p>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="what-we-do">
+        <h2>What We Do</h2>
+        <p>Aims to provide quick, simple, secure, and cashless ways to travel.</p>
+        <div class="team-illustration">
+            <img src="~/images/team.png" alt="Team Illustration">
+        </div>
+        <p class="team-description">
+            The team at CarpoolingSystem is an energetic, young, and socially conscious group that
+            works hand in hand with you to solve traffic congestion, increase ride-sharing awareness,
+            and promote a greener environment.
+        </p>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-content">
+        <div class="about-box">
+            <h2>Our Mission</h2>
+            <p>We aim to reduce traffic congestion, lower carbon emissions, and make commuting more cost-effective.</p>
+        </div>
+
+        <div class="about-box">
+            <h2>Why Choose Us?</h2>
+            <ul>
+                <li>Safe and verified users</li>
+                <li>Flexible ride options</li>
+                <li>Real-time tracking</li>
+                <li>Cost-efficient travel</li>
+            </ul>
+        </div>
+
+        <div class="about-box">
+            <h2>Contact Us</h2>
+            <p>Email: support@carpoolingsystem.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+        </div>
+    </section>
+
+    <section class="about-video">
+        <h2>How Travel Brings People Together</h2>
+        <div class="video-container">
+            <iframe width="100%" height="450"
+                    src="https://www.youtube.com/embed/vqYw1MRuHR0"
+                    title="How Travel Brings People Together" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+
+</div>
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <!-- Logo & Description -->
+            <div class="col-md-4">
+                <img src="~/Images/logo.webp" alt="Go Mate Logo" class="footer-logo">
+                <p>India's Best Carpooling Network for Your Daily Commuting.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Links Section -->
+            <div class="col-md-4">
+                <h5>Company</h5>
+                <ul>
+                    <li><a asp-controller="Home" asp-action="About">About us</a></li>
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Privacy</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-4">
+                <h5>Support</h5>
+                <ul>
+                    <li><a asp-controller="Home" asp-action="Contact">Contact us</a></li>
+                    <li><a asp-controller="Home" asp-action="Sitemap">Sitemap</a></li>
+                    <li><a asp-controller="Home" asp-action="Terms">Terms</a></li>
+
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="copyright">
+            <p>© 2025 Go Mate. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+
+
