@@ -1,20 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using CarpoolingSystem.Models;
+using CarpoolingSystem.Data;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace CarpoolingSystem.Controllers
 {
     public class AccountController : Controller
     {
-        public IActionResult Login()
-        {
-            return View();
-        }
+        private readonly ApplicationDbContext _context;
 
-        [HttpPost]
-        public IActionResult Login(string email, string password)
+        public AccountController(ApplicationDbContext context)
         {
-            // Handle login logic here (e.g., validate email/password)
-            // For now, just a simple redirect for demonstration purposes.
-            return RedirectToAction("Index", "Home"); // Redirect to the Home page after login
+            _context = context;
         }
 
         public IActionResult Register()
@@ -23,24 +22,69 @@ namespace CarpoolingSystem.Controllers
         }
 
         [HttpPost]
-        public IActionResult Register(string fullName, string email, string password, string confirmPassword)
+        public IActionResult Register(User model, string ConfirmPassword)
         {
-            // Check if passwords match
-            if (password != confirmPassword)
+            if (ModelState.IsValid)
             {
-                ViewBag.Error = "Passwords do not match!";
+                // Check if passwords match
+                if (model.PasswordHash != ConfirmPassword)
+                {
+                    ViewData["ErrorMessage"] = "Passwords do not match!";
+                    return View();
+                }
+
+                // Check if Email already exists
+                if (_context.Users.Any(u => u.Email == model.Email))
+                {
+                    ViewData["ErrorMessage"] = "Email is already registered!";
+                    return View();
+                }
+
+                // Hash Password before storing
+                model.PasswordHash = HashPassword(model.PasswordHash);
+
+                // Add User to Database
+                _context.Users.Add(model);
+                _context.SaveChanges();
+
+                ViewData["SuccessMessage"] = "Registration successful! You can now login.";
+                return RedirectToAction("Login");
+            }
+
+            return View(model);
+        }
+
+        private string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            }
+        }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [HttpPost]
+        public IActionResult Login(string Email, string Password)
+        {
+            var user = _context.Users.FirstOrDefault(u => u.Email == Email);
+
+            if (user == null || user.PasswordHash != HashPassword(Password))
+            {
+                ViewData["ErrorMessage"] = "Invalid email or password!";
                 return View();
             }
 
-            // Here, you would normally save the user data to the database
-            // For now, we'll just redirect to the login page after registration
-            return RedirectToAction("Login");
-        }
+            // ✅ Store success message in TempData
+            TempData["SuccessMessage"] = "Login successful! Welcome to GoMate.";
 
-        public IActionResult Logout()
-        {
-            // Clear authentication session (if using Identity, change this logic)
             return RedirectToAction("Index", "Home");
         }
+
     }
 }

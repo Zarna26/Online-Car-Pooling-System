@@ -1,5 +1,16 @@
-﻿@{
+﻿@model CarpoolingSystem.Models.User
+
+@{
     ViewData["Title"] = "Register";
+}
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+@if (ViewBag.Success != null)
+{
+    <div class="alert alert-success">@ViewBag.Success</div>
 }
 
 <link href="~/css/Site.css" rel="stylesheet" />
@@ -12,44 +23,65 @@
             <div class="registerbox">
                 <img src="~/Images/login.png" alt="User Icon" class="user" />
                 <h2>Register to GoMate</h2>
-                <form method="post">
 
+                @if (ViewData["SuccessMessage"] != null)
+                {
+                    <div class="alert alert-success">
+                        @ViewData["SuccessMessage"]
+                    </div>
+                }
+
+                @if (ViewData["ErrorMessage"] != null)
+                {
+                    <div class="alert alert-danger">
+                        @ViewData["ErrorMessage"]
+                    </div>
+                }
+
+                <form method="post" asp-action="Register" asp-controller="Account">
                     <!-- First Name -->
                     <label class="lblfname">First Name</label>
-                    <input type="text" class="txtfield" name="FirstName" placeholder="Enter First Name" required />
+                    <input type="text" class="txtfield" asp-for="FirstName" placeholder="Enter First Name" required />
+                    <span class="text-danger" asp-validation-for="FirstName"></span>
 
                     <!-- Last Name -->
                     <label class="lbllname">Last Name</label>
-                    <input type="text" class="txtfield" name="LastName" placeholder="Enter Last Name" required />
+                    <input type="text" class="txtfield" asp-for="LastName" placeholder="Enter Last Name" required />
+                    <span class="text-danger" asp-validation-for="LastName"></span>
 
                     <!-- Email -->
                     <label class="lblemail">Email</label>
-                    <input type="email" class="txtfield" name="Email" placeholder="Enter Email" required />
+                    <input type="email" class="txtfield" asp-for="Email" placeholder="Enter Email" required />
+                    <span class="text-danger" asp-validation-for="Email"></span>
 
                     <!-- Password -->
                     <label class="lblpass">Password</label>
-                    <input type="password" class="txtfield" name="Password" placeholder="********" required />
+                    <input type="password" class="txtfield" asp-for="PasswordHash" placeholder="********" required />
+                    <span class="text-danger" asp-validation-for="PasswordHash"></span>
 
                     <!-- Confirm Password -->
                     <label class="lblpass">Confirm Password</label>
                     <input type="password" class="txtfield" name="ConfirmPassword" placeholder="********" required />
+                    <span class="text-danger">@ViewData["PasswordMismatch"]</span>
 
                     <!-- Contact Number -->
                     <label class="lblmonumber">Contact Number</label>
-                    <input type="text" class="txtfield" name="PhoneNumber" placeholder="Enter Contact Number" required />
+                    <input type="text" class="txtfield" asp-for="PhoneNumber" placeholder="Enter Contact Number" required />
+                    <span class="text-danger" asp-validation-for="PhoneNumber"></span>
 
                     <!-- Gender Selection -->
                     <label class="lblgender">Gender</label>
                     <div class="radio-group">
-                        <input type="radio" id="male" name="Gender" value="Male" required>
+                        <input type="radio" id="male" asp-for="Gender" value="Male" required>
                         <label for="male">Male</label>
 
-                        <input type="radio" id="female" name="Gender" value="Female" required>
+                        <input type="radio" id="female" asp-for="Gender" value="Female" required>
                         <label for="female">Female</label>
 
-                        <input type="radio" id="other" name="Gender" value="Other" required>
+                        <input type="radio" id="other" asp-for="Gender" value="Other" required>
                         <label for="other">Other</label>
                     </div>
+                    <span class="text-danger" asp-validation-for="Gender"></span>
 
                     <br />
 
@@ -59,16 +91,19 @@
                     <br /><br />
 
                     Already have an account?
-                    <a asp-page="/Login" class="btnlogin">Click Here to Login</a>
+                    <a asp-controller="Account" asp-action="Login" class="btnlogin">Click Here to Login</a>
                 </form>
             </div>
         </div>
 
         <!-- Right Section: Promotional Text -->
         <div class="right-section">
-
             <h1>Find Your Ride, Share Your Journey</h1>
             <p>Connect with drivers and riders to share travel costs and reduce your carbon footprint.</p>
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
