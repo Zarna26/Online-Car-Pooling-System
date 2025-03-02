@@ -4,6 +4,9 @@ using CarpoolingSystem.Data;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
 
 namespace CarpoolingSystem.Controllers
 {
@@ -54,6 +57,16 @@ namespace CarpoolingSystem.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Index", "Home");
+        }
+
+
+
         private string HashPassword(string password)
         {
             using (SHA256 sha256 = SHA256.Create())
@@ -69,8 +82,7 @@ namespace CarpoolingSystem.Controllers
         }
 
         [HttpPost]
-        [HttpPost]
-        public IActionResult Login(string Email, string Password)
+        public async Task<IActionResult> Login(string Email, string Password)
         {
             var user = _context.Users.FirstOrDefault(u => u.Email == Email);
 
@@ -80,8 +92,25 @@ namespace CarpoolingSystem.Controllers
                 return View();
             }
 
+            // ✅ Create user claims
+            var claims = new List<Claim>
+    {
+        new Claim(ClaimTypes.Name, user.FirstName),
+        new Claim(ClaimTypes.Email, user.Email),
+        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()) // Important for authentication
+    };
+
+            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var authProperties = new AuthenticationProperties
+            {
+                IsPersistent = true // Keep the user logged in
+            };
+
+            // ✅ Sign in the user
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
+
             // ✅ Store success message in TempData
-            TempData["SuccessMessage"] = "Login successful! Welcome to GoMate.";
+            TempData["SuccessMessage"] = "Login successful! Welcome to Carpooling System.";
 
             return RedirectToAction("Index", "Home");
         }

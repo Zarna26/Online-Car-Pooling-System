@@ -1,12 +1,26 @@
 ﻿@{
     ViewData["Title"] = "Home";
-}
-@if (TempData["SuccessMessage"] != null)
+}@if (TempData["SuccessMessage"] != null)
 {
-    <div class="alert alert-success">
-        @TempData["SuccessMessage"]
-    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("toastMessage").innerText = "@TempData["SuccessMessage"]";
+            var toast = new bootstrap.Toast(document.getElementById("successToast"));
+            toast.show();
+        });
+    </script>
 }
+
+<div class="toast-container position-fixed top-0 end-0 p-3">
+    <div id="successToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                <span id="toastMessage"></span>
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
 
 
 <!-- Hero Section with Animated Background -->
@@ -175,7 +189,10 @@
         <h2 class="mb-4" data-aos="fade-up">Ready to Start Your Journey?</h2>
         <p class="mb-5" data-aos="fade-up" data-aos-delay="100">Join thousands of happy riders who are already saving money and time.</p>
         <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
-            <a asp-controller="Account" asp-action="Register" class="btn btn-success btn-lg me-3">Sign Up Now</a>
+            @if (!User.Identity.IsAuthenticated)  // 👈 Hide Sign Up if logged in
+            {
+                <a asp-controller="Account" asp-action="Register" class="btn btn-success btn-lg me-3">Sign Up Now</a>
+            }
             <a asp-controller="Home" asp-action="Contact" class="btn btn-outline-success btn-lg">Contact Us</a>
         </div>
     </div>
