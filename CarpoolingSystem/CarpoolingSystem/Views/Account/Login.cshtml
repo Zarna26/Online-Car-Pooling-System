@@ -7,17 +7,29 @@
 
 <div class="full-background">
     <div class="login-container">
-        <!-- Left Section: Login Form -->
         <div class="left-section">
             <div class="loginbox">
                 <img src="~/Images/login.png" alt="User Icon" class="user" />
                 <h2>Log in to GoMate</h2>
+
+                @if (ViewData["ErrorMessage"] != null)
+                {
+                    <div class="alert alert-danger">@ViewData["ErrorMessage"]</div>
+                }
+
                 <form method="post">
                     <label class="lblemail">Email</label>
                     <input type="email" class="txtemail" name="Email" placeholder="Enter Email" required />
 
                     <label class="lblpass">Password</label>
                     <input type="password" class="txtpass" name="Password" placeholder="********" required />
+
+                    <label class="lblusertype">Login As</label>
+                    <select class="txtusertype" name="UserType" required>
+                        <option value="">-- Select Role --</option>
+                        <option value="Passenger">Passenger</option>
+                        <option value="Driver">Driver</option>
+                    </select>
 
                     <a href="#" class="btnforget">Forgot Password?</a>
 
@@ -28,12 +40,12 @@
                     <br /><br />
 
                     Don't have an account?
-                    <a asp-page="/Register" class="btnregister">Click Here to Register</a>
+                    <a class="btnregister" asp-controller="Account" asp-action="Register">Click Here to Register</a>
                 </form>
+
             </div>
         </div>
 
-        <!-- Right Section: Promotional Text -->
         <div class="right-section">
             <h1>Find Your Ride, Share Your Journey</h1>
             <p>Connect with drivers and riders to share travel costs and reduce your carbon footprint.</p>

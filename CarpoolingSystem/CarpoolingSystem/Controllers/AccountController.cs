@@ -7,6 +7,7 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace CarpoolingSystem.Controllers
 {
@@ -29,24 +30,26 @@ namespace CarpoolingSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Check if passwords match
                 if (model.PasswordHash != ConfirmPassword)
                 {
                     ViewData["ErrorMessage"] = "Passwords do not match!";
                     return View();
                 }
 
-                // Check if Email already exists
                 if (_context.Users.Any(u => u.Email == model.Email))
                 {
                     ViewData["ErrorMessage"] = "Email is already registered!";
                     return View();
                 }
 
-                // Hash Password before storing
+                if (string.IsNullOrEmpty(model.UserType))
+                {
+                    ViewData["ErrorMessage"] = "Please select whether you are a Passenger or a Driver.";
+                    return View();
+                }
+
                 model.PasswordHash = HashPassword(model.PasswordHash);
 
-                // Add User to Database
                 _context.Users.Add(model);
                 _context.SaveChanges();
 
@@ -57,6 +60,49 @@ namespace CarpoolingSystem.Controllers
             return View(model);
         }
 
+        public IActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Login(string Email, string Password, string UserType)
+        {
+            var user = _context.Users.FirstOrDefault(u => u.Email == Email && u.UserType == UserType);
+
+            if (user == null || user.PasswordHash != HashPassword(Password))
+            {
+                ViewData["ErrorMessage"] = "Invalid email, password, or user type!";
+                return View();
+            }
+
+            var claims = new List<Claim>
+    {
+        new Claim(ClaimTypes.Name, user.FirstName),
+        new Claim(ClaimTypes.Email, user.Email),
+        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+        new Claim("UserType", user.UserType)
+    };
+
+            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var authProperties = new AuthenticationProperties { IsPersistent = true };
+
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
+
+            TempData["SuccessMessage"] = "Login successful!";
+
+            if (user.UserType == "Driver")
+            {
+                return RedirectToAction("Index", "Admin_Home");
+            }
+            else if (user.UserType == "Passenger")
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
@@ -64,8 +110,6 @@ namespace CarpoolingSystem.Controllers
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Index", "Home");
         }
-
-
 
         private string HashPassword(string password)
         {
@@ -75,45 +119,5 @@ namespace CarpoolingSystem.Controllers
                 return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
             }
         }
-
-        public IActionResult Login()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Login(string Email, string Password)
-        {
-            var user = _context.Users.FirstOrDefault(u => u.Email == Email);
-
-            if (user == null || user.PasswordHash != HashPassword(Password))
-            {
-                ViewData["ErrorMessage"] = "Invalid email or password!";
-                return View();
-            }
-
-            // ✅ Create user claims
-            var claims = new List<Claim>
-    {
-        new Claim(ClaimTypes.Name, user.FirstName),
-        new Claim(ClaimTypes.Email, user.Email),
-        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()) // Important for authentication
-    };
-
-            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-            var authProperties = new AuthenticationProperties
-            {
-                IsPersistent = true // Keep the user logged in
-            };
-
-            // ✅ Sign in the user
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
-
-            // ✅ Store success message in TempData
-            TempData["SuccessMessage"] = "Login successful! Welcome to Carpooling System.";
-
-            return RedirectToAction("Index", "Home");
-        }
-
     }
 }

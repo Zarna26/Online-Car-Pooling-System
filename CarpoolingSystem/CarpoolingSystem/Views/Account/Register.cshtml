@@ -69,21 +69,32 @@
                     <input type="text" class="txtfield" asp-for="PhoneNumber" placeholder="Enter Contact Number" required />
                     <span class="text-danger" asp-validation-for="PhoneNumber"></span>
 
-                    <!-- Gender Selection -->
-                    <label class="lblgender">Gender</label>
-                    <div class="radio-group">
-                        <input type="radio" id="male" asp-for="Gender" value="Male" required>
-                        <label for="male">Male</label>
+                        <!-- Gender Selection -->
+                        <label class="lblgender">Gender: </label>
+                        <div class="radio-group">
+                            <input type="radio" id="male" asp-for="Gender" value="Male" required>
+                            <label for="male">Male</label>
 
-                        <input type="radio" id="female" asp-for="Gender" value="Female" required>
-                        <label for="female">Female</label>
+                            <input type="radio" id="female" asp-for="Gender" value="Female" required>
+                            <label for="female">Female</label>
 
-                        <input type="radio" id="other" asp-for="Gender" value="Other" required>
-                        <label for="other">Other</label>
-                    </div>
-                    <span class="text-danger" asp-validation-for="Gender"></span>
+                            <input type="radio" id="other" asp-for="Gender" value="Other" required>
+                            <label for="other">Other</label>
+                        </div>
+                        <span class="text-danger" asp-validation-for="Gender"></span>
 
                     <br />
+                    <!-- User Type Selection -->
+                    <label class="lblusertype">Register As:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="passenger" asp-for="UserType" value="Passenger" required>
+                        <label for="passenger">Passenger</label>
+
+                        <input type="radio" id="driver" asp-for="UserType" value="Driver" required>
+                        <label for="driver">Driver</label>
+                    </div>
+                    <span class="text-danger" asp-validation-for="UserType"></span>
+<br/>
 
                     <!-- Register Button -->
                     <button type="submit" class="btnsubmit">Register</button>

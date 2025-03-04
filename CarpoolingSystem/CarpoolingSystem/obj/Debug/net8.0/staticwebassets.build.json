@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7t/6FbCg5ipg9ACbfERpnaAJze3SMUj9plWO755sNDM=",
+  "Hash": "V/DRE1l2PO+TvwV6REeEE9Eew+XmZzY+ebllm0R8ph0=",
   "Source": "CarpoolingSystem",
   "BasePath": "_content/CarpoolingSystem",
   "Mode": "Default",
@@ -262,6 +262,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\logo.webp"
+    },
+    {
+      "Identity": "D:\\CarPooling\\CarpoolingSystem\\CarpoolingSystem\\wwwroot\\Images\\profile_icon.png",
+      "SourceId": "CarpoolingSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\CarPooling\\CarpoolingSystem\\CarpoolingSystem\\wwwroot\\",
+      "BasePath": "_content/CarpoolingSystem",
+      "RelativePath": "Images/profile_icon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\profile_icon.png"
     },
     {
       "Identity": "D:\\CarPooling\\CarpoolingSystem\\CarpoolingSystem\\wwwroot\\Images\\team.png",

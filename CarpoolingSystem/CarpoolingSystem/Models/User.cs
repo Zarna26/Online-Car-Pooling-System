@@ -24,5 +24,8 @@ namespace CarpoolingSystem.Models
 
         [Required]
         public string Gender { get; set; }
+
+        [Required]
+        public string UserType { get; set; }
     }
 }

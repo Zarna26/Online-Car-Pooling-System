@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Profile";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg p-4">
+                <div class="card-body text-center">
+                    <!-- Profile Picture -->
+                    <img src="~/Images/profile_icon.png" class="rounded-circle mb-3" style="width: 100px;height: 100px; margin-bottom: 20px;" alt="Profile Picture">
+
+                    <h2 class="card-title text-primary">Welcome, @Model.FirstName @Model.LastName!</h2>
+                    <p class="text-muted">Your passenger profile</p>
+
+                    <!-- User Details -->
+                    <ul class="list-group list-group-flush text-left">
+                        <li class="list-group-item"><strong>Email:</strong> @Model.Email</li>
+                        <li class="list-group-item"><strong>Phone:</strong> @Model.PhoneNumber</li>
+                        <li class="list-group-item"><strong>Gender:</strong> @Model.Gender</li>
+                    </ul>
+
+                   
+                    <!-- Ride History -->
+                    <h4 class="mt-4">Ride History</h4>
+                   
+                    
+                    {
+                        <p>No ride history available.</p>
+                    }
+
+                    <!-- Emergency Contact -->
+                    <h4 class="mt-4">Emergency Contact</h4>
+                    <ul class="list-group list-group-flush text-left">
+                        <li class="list-group-item"><strong>Name:</strong> @Model.Email</li>
+                        <li class="list-group-item"><strong>Phone:</strong> @Model.Email</li>
+                    </ul>
+
+                    <!-- Buttons -->
+                    <div class="mt-4">
+                        <a href="#" class="btn btn-primary px-4">Edit Profile</a>
+                        <a href="/" class="btn btn-secondary px-4">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Custom Styles -->
+<style>
+    .card {
+        border-radius: 15px;
+        border: none;
+    }
+
+    .list-group-item {
+        border: none;
+    }
+</style>

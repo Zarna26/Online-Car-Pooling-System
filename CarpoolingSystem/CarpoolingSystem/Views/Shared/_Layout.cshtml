@@ -30,26 +30,49 @@
                 <!-- Navigation Links -->
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="CarPool" asp-action="Index">CarPool</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
-                        </li>
+                        @if (User.Identity.IsAuthenticated && User.Claims.Any(c => c.Type == "UserType" && c.Value == "Driver"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark fw-bold" asp-controller="Admin_Home" asp-action="Index">
+                                    <i class="fas fa-user-shield"></i> Admin Panel
+                                </a>
+                            </li>
+                        }
+                        else
+                        @if (User.Identity.IsAuthenticated && User.Claims.Any(c => c.Type == "UserType" && c.Value == "Passenger"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="CarPool" asp-action="Index">CarPool</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                            </li>
+                        }
                     </ul>
 
                     <!-- User Authentication Section -->
                     <ul class="navbar-nav">
                         @if (User.Identity.IsAuthenticated)
                         {
+
+                           
                             <li class="nav-item">
                                 <span class="nav-link text-dark">Welcome, @User.Identity.Name!</span>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-link nav-link text-dark"
+                                   style="border: 1px double;"
+                                   asp-area=""
+                                   asp-controller="Profile"
+                                   asp-action="Index">
+                                    Profile
+                                </a>
                             </li>
                             <li class="nav-item">
                                 <form id="logoutForm" method="post" asp-controller="Account" asp-action="Logout">

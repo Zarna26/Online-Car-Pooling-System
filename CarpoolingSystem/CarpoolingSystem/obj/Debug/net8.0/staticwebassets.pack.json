@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\Images\\logo.webp"
     },
     {
+      "Id": "D:\\CarPooling\\CarpoolingSystem\\CarpoolingSystem\\wwwroot\\Images\\profile_icon.png",
+      "PackagePath": "staticwebassets\\Images\\profile_icon.png"
+    },
+    {
       "Id": "D:\\CarPooling\\CarpoolingSystem\\CarpoolingSystem\\wwwroot\\Images\\team.png",
       "PackagePath": "staticwebassets\\Images\\team.png"
     },

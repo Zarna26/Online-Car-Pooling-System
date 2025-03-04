@@ -189,7 +189,7 @@
         <h2 class="mb-4" data-aos="fade-up">Ready to Start Your Journey?</h2>
         <p class="mb-5" data-aos="fade-up" data-aos-delay="100">Join thousands of happy riders who are already saving money and time.</p>
         <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
-            @if (!User.Identity.IsAuthenticated)  // 👈 Hide Sign Up if logged in
+            @if (!User.Identity.IsAuthenticated)  //  Hide Sign Up if logged in
             {
                 <a asp-controller="Account" asp-action="Register" class="btn btn-success btn-lg me-3">Sign Up Now</a>
             }
