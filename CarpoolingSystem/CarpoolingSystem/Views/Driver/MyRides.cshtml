@@ -1,0 +1,40 @@
+﻿@model List<CarpoolingSystem.Models.Ride>
+
+@{
+    ViewData["Title"] = "My Rides";
+}
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4"><i class="fas fa-route"></i> My Rides</h2>
+
+    <a asp-controller="Driver" asp-action="PostRide" class="btn btn-success">Post a Ride</a>
+
+    @if (Model.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Pickup</th>
+                    <th>Dropoff</th>
+                    <th>Date</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var ride in Model)
+                {
+                    <tr>
+                        <td>@ride.PickupLocation</td>
+                        <td>@ride.DropoffLocation</td>
+                        <td>@ride.RideDate.ToString("g")</td>
+                        <td>@ride.Price.ToString("C")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No rides posted yet.</p>
+    }
+</div>
