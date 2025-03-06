@@ -10,12 +10,12 @@
     <form asp-action="PostRide" method="post">
         <div class="form-group">
             <label asp-for="PickupLocation"></label>
-            <input asp-for="PickupLocation" class="form-control" required />
+            <input type="text" id="pickupLocation" name="PickupLocation" class="form-control" placeholder="Click to select pickup location" readonly required />
         </div>
 
         <div class="form-group">
             <label asp-for="DropoffLocation"></label>
-            <input asp-for="DropoffLocation" class="form-control" required />
+            <input type="text" id="dropLocation" name="DropoffLocation" class="form-control" placeholder="Click to select drop-off location" readonly required />
         </div>
 
         <div class="form-group">
@@ -36,3 +36,77 @@
         <button type="submit" class="btn btn-success">Post Ride</button>
     </form>
 </div>
+
+
+<!-- Pickup Location Modal -->
+<div id="pickupModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Choose Pickup Location</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <button class="btn btn-primary w-100 mb-2" id="useCurrentLocation">📍 Use My Current Location</button>
+                <input type="text" id="pickupSearch" class="form-control" placeholder="Search pickup location">
+                <div id="pickupSuggestions" class="suggestions-list"></div>
+                <div id="pickupMap" style="height: 400px;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="confirmPickup">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Drop-off Location Modal -->
+<div id="dropModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Choose Drop-off Location</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="dropSearch" class="form-control" placeholder="Search drop-off location">
+                <div id="dropSuggestions" class="suggestions-list"></div>
+                <div id="dropMap" style="height: 400px;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="confirmDrop">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('pickupLocation').addEventListener('click', function () {
+        var modal = new bootstrap.Modal(document.getElementById('pickupModal'));
+        modal.show();
+    });
+
+    document.getElementById('confirmPickup').addEventListener('click', function () {
+        let selectedLocation = document.getElementById('pickupSearch').value;
+        if (selectedLocation.trim() !== "") {
+            document.getElementById('pickupLocation').value = selectedLocation;
+        }
+        var modal = bootstrap.Modal.getInstance(document.getElementById('pickupModal'));
+        modal.hide();
+    });
+
+    document.getElementById('dropLocation').addEventListener('click', function () {
+        var modal = new bootstrap.Modal(document.getElementById('dropModal'));
+        modal.show();
+    });
+
+    document.getElementById('confirmDrop').addEventListener('click', function () {
+        let selectedLocation = document.getElementById('dropSearch').value;
+        if (selectedLocation.trim() !== "") {
+            document.getElementById('dropLocation').value = selectedLocation;
+        }
+        var modal = bootstrap.Modal.getInstance(document.getElementById('dropModal'));
+        modal.hide();
+    });
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
