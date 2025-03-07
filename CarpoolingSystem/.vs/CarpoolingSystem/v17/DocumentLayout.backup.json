@@ -3,11 +3,43 @@
   "WorkspaceRootPath": "D:\\CarPooling\\CarpoolingSystem\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|d:\\carpooling\\carpoolingsystem\\carpoolingsystem\\views\\carpool\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|solutionrelative:carpoolingsystem\\views\\carpool\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|d:\\carpooling\\carpoolingsystem\\carpoolingsystem\\views\\admin\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+=======
+      "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|c:\\users\\aayus\\onedrive\\desktop\\code\\projects\\cps\\online-car-pooling-system\\carpoolingsystem\\carpoolingsystem\\views\\driver\\postride.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|solutionrelative:carpoolingsystem\\views\\driver\\postride.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|c:\\users\\aayus\\onedrive\\desktop\\code\\projects\\cps\\online-car-pooling-system\\carpoolingsystem\\carpoolingsystem\\views\\carpool\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|solutionrelative:carpoolingsystem\\views\\carpool\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|c:\\users\\aayus\\onedrive\\desktop\\code\\projects\\cps\\online-car-pooling-system\\carpoolingsystem\\carpoolingsystem\\migrations\\20250305193907_initial1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|solutionrelative:carpoolingsystem\\migrations\\20250305193907_initial1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|c:\\users\\aayus\\onedrive\\desktop\\code\\projects\\cps\\online-car-pooling-system\\carpoolingsystem\\carpoolingsystem\\controllers\\drivercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|solutionrelative:carpoolingsystem\\controllers\\drivercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|c:\\users\\aayus\\onedrive\\desktop\\code\\projects\\cps\\online-car-pooling-system\\carpoolingsystem\\carpoolingsystem\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|solutionrelative:carpoolingsystem\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|c:\\users\\aayus\\onedrive\\desktop\\code\\projects\\cps\\online-car-pooling-system\\carpoolingsystem\\carpoolingsystem\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|solutionrelative:carpoolingsystem\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|c:\\users\\aayus\\onedrive\\desktop\\code\\projects\\cps\\online-car-pooling-system\\carpoolingsystem\\carpoolingsystem\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|solutionrelative:carpoolingsystem\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|c:\\users\\aayus\\onedrive\\desktop\\code\\projects\\cps\\online-car-pooling-system\\carpoolingsystem\\carpoolingsystem\\views\\admin\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+>>>>>>> 21d55eb8d4db87b2c7fdeae62e4663f3e1cc67fe
       "RelativeMoniker": "D:0:0:{29908F7F-1694-4AEE-AE79-F20BE7560BE0}|CarpoolingSystem\\CarpoolingSystem.csproj|solutionrelative:carpoolingsystem\\views\\admin\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -25,7 +57,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 16,
+=======
+          "SelectedChildIndex": 21,
+>>>>>>> 21d55eb8d4db87b2c7fdeae62e4663f3e1cc67fe
           "Children": [
             {
               "$type": "Bookmark",
@@ -88,11 +124,8 @@
               "Name": "ST:3:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
-            {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\CarPooling\\CarpoolingSystem\\CarpoolingSystem\\Views\\CarPool\\Index.cshtml",
@@ -107,6 +140,136 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+=======
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\aayus\\OneDrive\\Desktop\\Code\\PROJECTS\\CPS\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Views\\CarPool\\Index.cshtml",
+              "RelativeDocumentMoniker": "CarpoolingSystem\\Views\\CarPool\\Index.cshtml",
+              "ToolTip": "C:\\Users\\aayus\\OneDrive\\Desktop\\Code\\PROJECTS\\CPS\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Views\\CarPool\\Index.cshtml",
+              "RelativeToolTip": "CarpoolingSystem\\Views\\CarPool\\Index.cshtml",
+              "ViewState": "AgIAAEQBAAAAAAAAAAAswFEBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T10:54:34.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\aayus\\OneDrive\\Desktop\\Code\\PROJECTS\\CPS\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "CarpoolingSystem\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\aayus\\OneDrive\\Desktop\\Code\\PROJECTS\\CPS\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "CarpoolingSystem\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T19:33:24.546Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ApplicationDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\aayus\\OneDrive\\Desktop\\Code\\PROJECTS\\CPS\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "CarpoolingSystem\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\aayus\\OneDrive\\Desktop\\Code\\PROJECTS\\CPS\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeToolTip": "CarpoolingSystem\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T19:33:16.061Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\aayus\\OneDrive\\Desktop\\Code\\PROJECTS\\CPS\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "CarpoolingSystem\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\aayus\\OneDrive\\Desktop\\Code\\PROJECTS\\CPS\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Properties\\launchSettings.json",
+              "RelativeToolTip": "CarpoolingSystem\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-05T19:33:05.986Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DriverController.cs",
+              "DocumentMoniker": "C:\\Users\\aayus\\OneDrive\\Desktop\\Code\\PROJECTS\\CPS\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Controllers\\DriverController.cs",
+              "RelativeDocumentMoniker": "CarpoolingSystem\\Controllers\\DriverController.cs",
+              "ToolTip": "C:\\Users\\aayus\\OneDrive\\Desktop\\Code\\PROJECTS\\CPS\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Controllers\\DriverController.cs",
+              "RelativeToolTip": "CarpoolingSystem\\Controllers\\DriverController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T19:32:26.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PostRide.cshtml",
+              "DocumentMoniker": "C:\\Users\\aayus\\OneDrive\\Desktop\\Code\\PROJECTS\\CPS\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Views\\Driver\\PostRide.cshtml",
+              "RelativeDocumentMoniker": "CarpoolingSystem\\Views\\Driver\\PostRide.cshtml",
+              "ToolTip": "C:\\Users\\aayus\\OneDrive\\Desktop\\Code\\PROJECTS\\CPS\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Views\\Driver\\PostRide.cshtml",
+              "RelativeToolTip": "CarpoolingSystem\\Views\\Driver\\PostRide.cshtml",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAQwFoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-05T19:31:17.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20250305193907_initial1.cs",
+              "DocumentMoniker": "C:\\Users\\aayus\\OneDrive\\Desktop\\Code\\PROJECTS\\CPS\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Migrations\\20250305193907_initial1.cs",
+              "RelativeDocumentMoniker": "CarpoolingSystem\\Migrations\\20250305193907_initial1.cs",
+              "ToolTip": "C:\\Users\\aayus\\OneDrive\\Desktop\\Code\\PROJECTS\\CPS\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Migrations\\20250305193907_initial1.cs",
+              "RelativeToolTip": "CarpoolingSystem\\Migrations\\20250305193907_initial1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T19:39:08.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MyRides.cshtml",
+              "DocumentMoniker": "C:\\Users\\aayus\\OneDrive\\Desktop\\Code\\PROJECTS\\CPS\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Views\\Driver\\MyRides.cshtml",
+              "RelativeDocumentMoniker": "CarpoolingSystem\\Views\\Driver\\MyRides.cshtml",
+              "ToolTip": "C:\\Users\\aayus\\OneDrive\\Desktop\\Code\\PROJECTS\\CPS\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Views\\Driver\\MyRides.cshtml",
+              "RelativeToolTip": "CarpoolingSystem\\Views\\Driver\\MyRides.cshtml",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAswCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-05T19:30:27.837Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Ride.cs",
+              "DocumentMoniker": "C:\\Users\\aayus\\OneDrive\\Desktop\\Code\\PROJECTS\\CPS\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Models\\Ride.cs",
+              "RelativeDocumentMoniker": "CarpoolingSystem\\Models\\Ride.cs",
+              "ToolTip": "C:\\Users\\aayus\\OneDrive\\Desktop\\Code\\PROJECTS\\CPS\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Models\\Ride.cs",
+              "RelativeToolTip": "CarpoolingSystem\\Models\\Ride.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T19:29:28.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\aayus\\OneDrive\\Desktop\\Code\\PROJECTS\\CPS\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Views\\Admin\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "CarpoolingSystem\\Views\\Admin\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\aayus\\OneDrive\\Desktop\\Code\\PROJECTS\\CPS\\Online-Car-Pooling-System\\CarpoolingSystem\\CarpoolingSystem\\Views\\Admin\\Home\\Index.cshtml",
+              "RelativeToolTip": "CarpoolingSystem\\Views\\Admin\\Home\\Index.cshtml",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-05T17:18:33.271Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+>>>>>>> 21d55eb8d4db87b2c7fdeae62e4663f3e1cc67fe
               "Title": "dbo.Users.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/CarPooling/True/SqlTable/dbo.Users.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/CarPooling/True/SqlTable/dbo.Users.sql",
