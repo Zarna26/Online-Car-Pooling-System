@@ -31,6 +31,18 @@
         .suggestion-item:hover {
             background: #f0f0f0;
         }
+    /* Centered Loader Animation */
+    .loader {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 5px solid #28a745;
+        animation: spin 1s linear infinite;
+    }
+
+
+
 </style>
 
 <div class="container-fluid bg-success text-white text-center py-5">
@@ -94,11 +106,88 @@
                    
                 </div>
 
-                <button class="btn btn-success w-100">Find Ride</button>
+                <button class="btn btn-success w-100" id="findRideBtn">Find Ride</button>
             </div>
         </div>
     </div>
 </div>
+<!-- Stylish Find Ride Modal -->
+<!-- Ride Matching Modal -->
+<div id="findRideModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h4 class="modal-title">Available Ride Matches</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <h2 class="text-center"> 🚗 Finding the best carpool match for you...</h2>
+                <br />
+                <br />
+
+                <!-- Loader Animation
+                <div class="text-center my-3">
+                    <div class="spinner-border text-success" role="status"></div>
+                </div> -->
+                <!-- Dynamic List of Riders -->
+                <div id="rideList">
+                    <!-- Users will be dynamically added here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Mock data for users (Replace this with real API data)
+    const rideUsers = [
+        { id: 1, name: "Amit Sharma", rating: 4.8, seatsAvailable: 2, price: "₹100" },
+        { id: 2, name: "Neha Patel", rating: 4.5, seatsAvailable: 1, price: "₹120" },
+        { id: 3, name: "Rahul Mehta", rating: 4.7, seatsAvailable: 3, price: "₹90" }
+    ];
+
+    function showRideMatches() {
+        let rideList = document.getElementById("rideList");
+        rideList.innerHTML = ""; // Clear old list
+
+        if (rideUsers.length === 0) {
+            rideList.innerHTML = "<p class='text-center text-muted'>No rides available for this route.</p>";
+        } else {
+            rideUsers.forEach(user => {
+                let userCard = `
+                        <div class="card mb-3 shadow-sm p-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="mb-1">${user.name} <span class="text-warning">⭐${user.rating}</span></h5>
+                                    <p class="mb-1">Seats Available: ${user.seatsAvailable}</p>
+                                    <p class="mb-1"><strong>${user.price}</strong> per seat</p>
+                                </div>
+                                <button class="btn btn-success" onclick="requestRide(${user.id})">Request Ride</button>
+                            </div>
+                        </div>
+                    `;
+                rideList.innerHTML += userCard;
+            });
+        }
+
+        var modal = new bootstrap.Modal(document.getElementById('rideMatchModal'));
+        modal.show();
+    }
+
+    function requestRide(userId) {
+        alert("Ride request sent to user ID: " + userId);
+        // Here, you can send a request to the backend to process the ride request
+    }
+
+    // Show modal when "Find Ride" button is clicked
+    document.querySelector(".btn-success.w-100").addEventListener("click", showRideMatches);
+</script>
+
+
+
 
 <!-- Pickup Location Modal -->
 <div id="pickupModal" class="modal fade" tabindex="-1">
@@ -346,6 +435,12 @@
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdColsUduXNvZtEbMMQqSnyIQr5qxY4Qk&callback=initMap" async defer></script>
 
+<script>
+    document.getElementById('findRideBtn').addEventListener('click', function () {
+        var modal = new bootstrap.Modal(document.getElementById('findRideModal'));
+        modal.show();
+    });
+</script>
 
 
 

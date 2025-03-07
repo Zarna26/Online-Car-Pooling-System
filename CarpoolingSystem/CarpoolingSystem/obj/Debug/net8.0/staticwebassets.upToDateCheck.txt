@@ -9,6 +9,7 @@ wwwroot\Images\cost.jpeg
 wwwroot\Images\eco.jpeg
 wwwroot\Images\login.png
 wwwroot\Images\logo.webp
+wwwroot\Images\profile_icon.png
 wwwroot\Images\team.png
 wwwroot\Images\track.webp
 wwwroot\Images\verify_identity.png
